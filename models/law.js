@@ -1,3 +1,4 @@
+var id = 0;
 var title = "";
 var link = "";
 var description = "";

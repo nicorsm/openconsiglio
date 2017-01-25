@@ -131,6 +131,7 @@ router.post('/laws', function (req, res, next) {
         }
 
         current = new Law();
+        current.id = parseInt(id.replace("card_", ""))
         current.title = node.children().closest("h3").text();
         current.link = baseUrl + node.children().closest("div").children().closest("a").attr("href");
       } else if (current != null) {
