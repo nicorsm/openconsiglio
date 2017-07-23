@@ -20,10 +20,10 @@ Utils.documentTypes = [
             "label_en": "Qualified Law"
         },
         {
-            "short": "lawConstitutionalRevision",
+            "short": "constitutionalReviewLaw",
             "parameter": "+Legge AND +Revisione AND +Costituziuonale",
             "label_it": "Legge di Revisione Costituzionale",
-            "label_en": "Law of Constitutional Revision"
+            "label_en": "Law of Constitutional Review"
         },
         {
             "short": "decree",
@@ -44,10 +44,10 @@ Utils.documentTypes = [
             "label_en": "Legislative Decree"
         },
         {
-            "short": "boardDecree",
+            "short": "councilDecree",
             "parameter": "+Decreto AND +Consiliare",
             "label_it": "Decreto Consiliare",
-            "label_en": "Board Decree"
+            "label_en": "Council Decree"
         },
         {
             "short": "delegatedDecree",
@@ -56,10 +56,10 @@ Utils.documentTypes = [
             "label_en": "Delegated Decree"
         },
         {
-            "short": "regulations",
+            "short": "regulation",
             "parameter": "+Regolamento",
             "label_it": "Regolamento",
-            "label_en": "Regulations"
+            "label_en": "Regulation"
         },
         {
             "short": "notification",
@@ -71,7 +71,7 @@ Utils.documentTypes = [
             "short": "statute",
             "parameter": "+Statuto",
             "label_it": "Statuto",
-            "label_en": "statute"
+            "label_en": "Statute"
         },
         {
             "short": "memorandum",

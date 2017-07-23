@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('smlaws:server');
+var debug = require('debug')('openconsiglio:server');
 var http = require('http');
 
 /**
