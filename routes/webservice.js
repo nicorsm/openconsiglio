@@ -9,7 +9,7 @@ var Attachment = require("../models/attachment.js");
 var Utils = require("../utils/utils.js");
 
 const querystring = require('querystring');
-var baseUrl = "http://www.consigliograndeegenerale.sm";
+var baseUrl = "https://www.consigliograndeegenerale.sm";
 var url = baseUrl + "/on-line/home/archivio-leggi-decreti-e-regolamenti.html";
 var documentsBaseUrl = baseUrl + "/on-line/home/archivio-leggi-decreti-e-regolamenti/";
 
@@ -30,10 +30,10 @@ router.post('/laws', function (req, res, next) {
   console.log(pageNumber)
   
   var requestType = req.body.type;
-  var type = "";
   var currentType = "";
   
   var documentTypes = Utils.documentTypes;
+  var type = "";
   for(var i = 0; i < documentTypes.length; i++){
     var element = documentTypes[i];
     if(element["short"] == requestType) {
@@ -105,6 +105,7 @@ router.post('/laws', function (req, res, next) {
         "success":false,
         "count":0,
         "cgegUrl":postUrl,
+        "error":err,
         "message":"There was a problem while fetching data from CGeG website.",
         "data":[]
       }
@@ -138,9 +139,8 @@ router.post('/laws', function (req, res, next) {
         if (node.attr("class") == "fl") {
           //Document description
           current.description = node.text().replace("(Visualizza dettagli)","")
-          .replace("�"," ")
-           .replace("�"," ")
-           .replace("��","");
+          .replace(/\xa0/g, " ")
+          .replace(/[^\x00-\x7F]/g, "");
         }
 
         if (node.attr("class") == "fr") {
